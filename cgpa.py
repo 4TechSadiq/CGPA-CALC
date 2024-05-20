@@ -14,7 +14,6 @@ def cgpa(data: pd.DataFrame):
                 cred = int(data.iloc[i][1])
                 mark = float(data.iloc[i][2])
             except ValueError:
-                # Skip rows with non-numeric credit or GP
                 continue
             cred_t += cred
             cred_x_mark += cred * mark
