@@ -1,0 +1,245 @@
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    padding-top: 50px; /* Add padding to avoid overlap with fixed nav-bar */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.nav-bar {
+    background: white;
+    width: 100%;
+    height: 50px;
+    position: fixed; /* Fix the nav-bar at the top */
+    top: 0; /* Align it to the top of the page */
+    left: 0; /* Align it to the left of the page */
+    z-index: 1000; /* Ensure it stays above other content */
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /* Add some padding for spacing */
+}
+
+.contact-btn {
+    margin-top: 5px;
+    background: none;
+    color: rgb(37, 109, 53);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.contact-btn:hover {
+    color: yellowgreen;
+}
+
+.content {
+    flex: 1; /* This makes the content area grow to fill the available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cgpa-container {
+    width: 50%;
+    text-align: left; /* Align text to the left */
+}
+
+.cgpa-container div {
+    margin-bottom: 20px; /* Add some margin between sections */
+}
+
+h1 {
+    font-size: 30px;
+    color: rgb(37, 109, 53);
+    font-family: 'Roboto', sans-serif; /* Use Roboto regular */
+    font-weight: 500; /* Ensure medium weight for italic is set correctly */
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+footer {
+    background: rgb(37, 109, 53);
+    width: 100%;
+    height: 60px;
+    flex-shrink: 0; /* Ensure the footer doesn't shrink */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Add text color for better contrast */
+    margin-top: 5%;
+}
+
+h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sub-btn {
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background: rgb(37, 109, 53);
+    color: azure;
+    font-size: 20px;
+    margin-top: 20px; /* Add some margin for spacing */
+    cursor: pointer;
+}
+
+.sub-btn:hover {
+    background: yellowgreen;
+}
+.upload-space {
+    width: 50%;
+    height: 100px;
+    background: rgb(165, 238, 204);
+    margin-bottom: 20px; /* Add some margin for spacing */
+    overflow: hidden; /* Ensure the image does not overflow */
+    /*border: solid rgb(37, 109, 53) 3px;*/
+    position: relative; 
+    border-radius: 2px;
+}
+table{
+    border: solid 2px;
+    width: 80%;
+    border-radius: 2px;
+}
+th{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+}
+.tr1{
+    background: white;
+}
+tr{
+    border: solid 1px;
+    background: rgb(147, 240, 150);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.inp {
+    width: 100%; /* Make the input occupy 100% width */
+    height: 100%; /* Make the input occupy 100% height */
+    position: absolute; /* Position the input absolutely */
+    top: 0; /* Align input to the top */
+    left: 0; /* Align input to the left */
+    opacity: 0; /* Hide the input visually */
+    cursor: pointer; /* Change cursor to pointer when hovering */
+}
+
+.up-text{
+    text-align: center;
+    margin-top: 10%;
+}
+.img-container {
+    width: 75%;
+    height: 250px;
+    background: wheat;
+    margin-bottom: 20px; /* Add some margin for spacing */
+    overflow: hidden; /* Ensure the image does not overflow */
+    border: solid rgb(37, 109, 53) 3px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    
+}
+
+.try-btn {
+    margin-top: 2%;
+    width: 30%;
+    height: 40px;
+    border: none;
+    border-radius: 1px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(37, 109, 53);
+    color: white;
+    cursor: pointer;
+}
+
+.try-btn:hover {
+    background: yellowgreen;
+}
+
+h3 {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif; /* Use Roboto regular */
+    font-weight: 500;
+}
+label{
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.inp-box{
+    width: 50%;
+    height: 25px;
+}
+
+.add{
+    margin-top: 3%;
+    width: 30%;
+    height: 35px;
+}
+.td-inp{
+    width: 90%;
+    border: none;
+}
+.td-inp1{
+    width: 90%;
+    border: none;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .cgpa-container {
+        width: 100%; /* Adjusted width for smaller screens */
+        max-width: 500px; /* Maximum width to maintain readability */
+    }
+
+    .try-btn {
+        width: 40%; /* Adjusted width for smaller screens */
+    }
+    .img-container{
+        width: 100%;
+    }
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill; /* Ensure the image covers the container */
+
+    }
+    table{
+        width: 100%;
+    }
+    .inp-box{
+        width: 70%;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cgpa-container {
+        width: 90%; /* Adjusted width for smaller screens */
+        max-width: 300px; /* Maximum width to maintain readability */
+    }
+
+    .try-btn {
+        width: 60%; /* Adjusted width for smaller screens */
+    }
+}

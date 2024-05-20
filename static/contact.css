@@ -1,0 +1,137 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    padding-top: 50px; /* Add padding to avoid overlap with fixed nav-bar */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+}
+
+.nav-bar {
+    background: white;
+    width: 100%;
+    height: 50px;
+    position: fixed; /* Fix the nav-bar at the top */
+    top: 0; /* Align it to the top of the page */
+    left: 0; /* Align it to the left of the page */
+    z-index: 1000; /* Ensure it stays above other content */
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /* Add some padding for spacing */
+}
+
+.contact-btn {
+    margin-top: 5px;
+    background: none;
+    color: rgb(37, 109, 53);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.contact-btn:hover {
+    color: yellowgreen;
+}
+
+.content {
+    flex: 1; /* This makes the content area grow to fill the available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    width: 50%;
+    text-align: left; /* Align text to the left */
+}
+
+.contact-container p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 15px; /* Add some margin for spacing */
+}
+
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.sub-btn {
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background: rgb(37, 109, 53);
+    color: azure;
+    font-size: 20px;
+    margin-top: 20px; /* Add some margin for spacing */
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.sub-btn:hover {
+    background: yellowgreen;
+}
+
+footer {
+    background: rgb(37, 109, 53);
+    width: 100%;
+    height: 60px;
+    flex-shrink: 0; /* Ensure the footer doesn't shrink */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Add text color for better contrast */
+    margin-top: 5%;
+}
+
+h1, h2 {
+    font-size: 30px;
+    color: rgb(37, 109, 53);
+    font-family: 'Roboto', sans-serif; /* Use Roboto regular */
+    font-weight: 500; /* Ensure medium weight for italic is set correctly */
+}
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        width: 80%; /* Adjusted width for smaller screens */
+        max-width: 500px; /* Maximum width to maintain readability */
+    }
+    .sub-btn {
+        width: 60%; /* Adjusted width for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-container {
+        width: 90%; /* Adjusted width for smaller screens */
+        max-width: 300px; /* Maximum width to maintain readability */
+    }
+
+    .sub-btn {
+        width: 80%; /* Adjusted width for smaller screens */
+    }
+}

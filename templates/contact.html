@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/contact.css" type="text/css">
+    <title>Contact Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-bar">
+        <button class="contact-btn" onclick="window.location.href='/'">HOME</button>
+    </div>
+    <div class="content">
+        <div class="contact-container">
+            <h1>Contact Developer</h1>
+            <div class="p-container">
+            <p>In the event that you encounter any problems while using this, please don't hesitate to<br> reach out to the developer. A contact form has been provided below for your convenience.<br> Should you experience any difficulties or malfunctions, filling out this form will ensure a <br> direct line of communication with the developer to address the issue promptly and efficiently.</p>
+            </div>
+            <form action="/send-message" method="POST" class="contact-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="name">Mail</label><br>
+                <input type="email" id="name" name="name" required>
+                <br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <br>
+                <button type="submit" class="sub-btn">Send Message</button>
+            </form>
+            <p>If you're facing any type of errors, try using the manual method.</p>
+            <a href="manual.html"><h2>Try Manual</h2></a>
+        </div>
+    </div>
+    <footer>Contact us at support@example.com</footer>
+</body>
+</html>

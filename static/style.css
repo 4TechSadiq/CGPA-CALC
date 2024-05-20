@@ -1,0 +1,94 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    text-align: center; /* Center align the content */
+    padding-top: 50px; /* Add padding to avoid overlap with fixed nav-bar */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.nav-bar {
+    width: 100%;
+    height: 50px;
+    position: fixed; /* Fix the nav-bar at the top */
+    top: 0; /* Align it to the top of the page */
+    left: 0; /* Align it to the left of the page */
+    z-index: 1000; /* Ensure it stays above other content */
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /* Add some padding for spacing */
+}
+
+.contact-btn {
+    margin-top: 5px;
+    background: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(37, 109, 53);
+}
+
+.contact-btn:hover {
+    color: yellowgreen;
+}
+
+.content {
+    flex: 1; /* This makes the content area grow to fill the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cgpa-container {
+    text-align: center; /* Center align the content inside the container */
+}
+
+h1 {
+    margin: 0;
+    font-size: 50px;
+    color: rgb(37, 109, 53);
+    font-family: 'Roboto', sans-serif; /* Use Roboto regular */
+    font-weight: 500; /* Ensure medium weight for italic is set correctly */
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+footer {
+    background: rgb(37, 109, 53);
+    width: 100%;
+    height: 60px;
+    flex-shrink: 0; /* Ensure the footer doesn't shrink */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Add text color for better contrast */
+}
+
+.sub-btn {
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background: rgb(37, 109, 53);
+    color: azure;
+    font-size: 20px;
+    margin-top: 20px; /* Add some margin for spacing */
+    cursor: pointer;
+}
+
+.sub-btn:hover {
+    background: yellowgreen;
+}

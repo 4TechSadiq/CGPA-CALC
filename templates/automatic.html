@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/auto-style.css" type="text/css">
+    <title>CGPA Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-bar">
+        <button class="contact-btn" onclick="window.location.href='/'">HOME</button>
+        <button class="contact-btn" onclick="window.location.href='/contact'">CONTACT</button>
+    </div>
+    <div class="content">
+        <div class="cgpa-container">
+            <h1 class="">Automatic Calculation</h1>
+            <div>
+                <h3>Calculate Automatically</h3>
+                <p>Automatically calculate CGPA by uploading an image, incorporating text extraction and optional CGPA calculation</p>
+                <p><strong>NB:</strong> Upload image in the exact given size only.</p>
+                <p>Example:</p>
+                <div class="img-container">
+                    <img src="/test1.png" alt="CGPA Calculation Example">
+                </div>
+                <h3>Upload file</h3>
+                <form method="post">
+                <div class="upload-space">
+                    <p class="up-text">Choose file to upload</p>
+                    <input class="inp" name="picture" type="file" placeholder="Upload image">
+                </div>
+                <button type="submit" class="try-btn">Upload</button>
+                </form>
+            </div>
+            <form action="">
+                <form action="">
+                    <table>
+                        <tr>
+                                <th>Subject code</th>
+                                <th>Credit Score</th>
+                                <th>Mark</th>
+                        </tr>
+                        <tr>
+                            <td><input name="sub-code" class="td-inp1" type="text"></td>
+                            <td><input name="credit" class="td-inp" type="text"></td>
+                            <td><input name="mark" class="td-inp" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input class="td-inp1" type="text"></td>
+                            <td><input class="td-inp" type="text"></td>
+                            <td><input class="td-inp" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input class="td-inp1" type="text"></td>
+                            <td><input class="td-inp" type="text"></td>
+                            <td><input class="td-inp" type="text"></td>
+                        </tr>
+                    </table>
+                    <p>Check and verify your credit and mark before submitting</p>
+                    <button class="try-btn" type="submit">Submit</button>
+                </form>
+            </form>
+            {% if cgpa_core is not none%}
+                <h2>Your CGPA is :{{ cgpa_core }}</h2>
+            {% endif %}
+            <p>If you're facing any type errors, try using manual method.</p>
+            <a href="manual.html"><h2>Try Manual</h2></a>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

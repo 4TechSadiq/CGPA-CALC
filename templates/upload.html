@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/upload.css" type="text/css">
+    <title>CGPA Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-bar">
+        <button class="contact-btn" onclick="window.location.href='/'">HOME</button>
+        <button class="contact-btn" onclick="window.location.href='/contact'">CONTACT</button>
+    </div>
+    <div class="content">
+        <div class="cgpa-container">
+            <h1 class="">CGPA Calculator</h1>
+            <div>
+                <h3>Calculate Automatically</h3>
+                <p>Automatically calculate CGPA by uploading an image, incorporating text extraction and optional CGPA calculation</p>
+                <p><strong>NB:</strong> Upload image in the exact given size only.</p>
+                <p>Example:</p>
+                <div class="img-container">
+                    <img src="/test1.png" alt="CGPA Calculation Example">
+                </div>
+                ><button class="try-btn" onclick="window.location.href='/auto'">Try Automatic</button>
+            </div>
+            <div>
+                <h3>Calculate Manually</h3>
+                <p>Manually calculating CGPA, incorporating fields like subject code, credit, and marks</p>
+                <div class="img-container">
+                    <img src="/test1.png" alt="CGPA Calculation Example">
+                </div>
+                <button class="try-btn" onclick="window.location.href='/manual'">Try Manual</button>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>
