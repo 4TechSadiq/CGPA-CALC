@@ -9,55 +9,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="nav-bar">
-        <button class="contact-btn" onclick="window.location.href='/'">HOME</button>
-        <button class="contact-btn" onclick="window.location.href='/contact'">CONTACT</button>
-    </div>
-    <div class="content">
-        <div class="cgpa-container">
-            <h1 class="">Manual Calculation</h1>
-            <div>
-                <h3>Calculate Manually</h3>
-                <form action="">
-                    <label for="">Subject Code</label><br>
-                    <input class="inp-box" type="text"><br>
-                    <label for="">Credit</label><br>
-                    <input class="inp-box" type="number"><br>
-                    <label for="">Mark</label><br>
-                    <input class="inp-box" type="number"><br>
-                    <input class="add" type="button" value="Add">
-                </form>
-            </div>
-            <form action="">
-                <table>
-                    <tr>
-                            <th>Subject code</th>
+    <div class="wrapper">
+        <div class="nav-bar">
+            <button class="contact-btn" onclick="window.location.href='/'">HOME</button>
+            <button class="contact-btn" onclick="window.location.href='/contact'">CONTACT</button>
+        </div>
+        <div class="content">
+            <div class="cgpa-container">
+                <h1>Manual Calculation</h1>
+                <div>
+                    <h3>Calculate Manually</h3>
+                    <form method="post">
+                        <label for="s_code">Subject Code</label><br>
+                        <input class="inp-box" name="s_code" type="text" required><br>
+                        <label for="cred">Credit</label><br>
+                        <input class="inp-box" name="cred" type="number" required><br>
+                        <label for="mark">Mark</label><br>
+                        <input class="inp-box" name="mark" type="number" required><br>
+
+                        {% if data %}
+                            {% for entry in data %}
+                                <input type="hidden" name="data" value="{{ entry['s'] }}|{{ entry['c'] }}|{{ entry['m'] }}">
+                            {% endfor %}
+                        {% endif %}
+
+                        <button class="try-btn" type="submit">Add</button>
+                    </form>
+                </div>
+                <form method="post" action="/manual">
+                    {% if data %}
+                    <table>
+                        <tr>
+                            <th>Subject Code</th>
                             <th>Credit Score</th>
                             <th>Mark</th>
-                    </tr>
-                    <tr>
-                        <td><input class="td-inp1" type="text"></td>
-                        <td><input class="td-inp" type="text"></td>
-                        <td><input class="td-inp" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><input class="td-inp1" type="text"></td>
-                        <td><input class="td-inp" type="text"></td>
-                        <td><input class="td-inp" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><input class="td-inp1" type="text"></td>
-                        <td><input class="td-inp" type="text"></td>
-                        <td><input class="td-inp" type="text"></td>
-                    </tr>
-                </table>
-                <p>Check and verify your credit and mark before submitting</p>
-                <button class="try-btn" type="submit">Submit</button>
-            </form>
-            <p>If you're facing any type errors, try using manual method.</p>
-            <a href="manual.html"><h2>Try Manual</h2></a>
+                        </tr>
+                        {% for entry in data %}
+                            <tr>
+                                <td><input name="sub" class="td-inp1" type="text" value="{{ entry['s'] }}"></td>
+                                <td><input name="credit" class="td-inp" type="text" value="{{ entry['c'] }}"></td>
+                                <td><input name="marks" class="td-inp" type="text" value="{{ entry['m'] }}"></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <p>Check and verify your credit and mark before submitting</p>
+                    <button class="try-btn" type="submit">Submit</button>
+                    {% endif %}
+                </form>
+                {% if cgp is not none %}
+                    <h2>Your CGPA is: {{ cgp }}</h2>
+                {% endif %}
+            </div>
         </div>
+        <footer>
+            <p>&copy; 2024 CGPA Calculator. All rights reserved.</p>
+        </footer>
     </div>
-    <footer></footer>
 </body>
 </html>
