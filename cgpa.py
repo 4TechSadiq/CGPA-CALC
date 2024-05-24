@@ -2,9 +2,6 @@ import pandas as pd
 from PIL import Image
 from image_processing import get_mark
 
-image = Image.open("test8.jpg")
-data_frame = get_mark(image)
-
 def cgpa(data: pd.DataFrame):
     cred_x_mark = 0
     cred_t = 0
@@ -22,6 +19,3 @@ def cgpa(data: pd.DataFrame):
         return cgpa
     except Exception as e:
         return f"Error: {str(e)}"
-
-# print(data_frame)
-# print(cgpa(data=data_frame))
