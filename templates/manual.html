@@ -20,8 +20,8 @@
                 <div>
                     <h3>Calculate Manually</h3>
                     <form method="post">
-                        <label for="s_code">Subject Code</label><br>
-                        <input class="inp-box" name="s_code" type="text" required><br>
+                        <label for="sub">Subject Code</label><br>
+                        <input class="inp-box" name="sub" type="text" required><br>
                         <label for="cred">Credit</label><br>
                         <input class="inp-box" name="cred" type="number" required><br>
                         <label for="mark">Mark</label><br>
@@ -33,11 +33,12 @@
                             {% endfor %}
                         {% endif %}
 
-                        <button class="try-btn" type="submit">Add</button>
+                        <button class="try-btn" type="submit" name="add_entry">Add</button>
                     </form>
                 </div>
-                <form method="post" action="/manual">
-                    {% if data %}
+
+                {% if data %}
+                <form method="post">
                     <table>
                         <tr>
                             <th>Subject Code</th>
@@ -45,26 +46,28 @@
                             <th>Mark</th>
                         </tr>
                         {% for entry in data %}
-                            <tr>
-                                <td><input name="sub" class="td-inp1" type="text" value="{{ entry['s'] }}"></td>
-                                <td><input name="credit" class="td-inp" type="text" value="{{ entry['c'] }}"></td>
-                                <td><input name="marks" class="td-inp" type="text" value="{{ entry['m'] }}"></td>
-                            </tr>
+                        <tr>
+                            <td><input type="text" name="sub" value="{{ entry['s'] }}"></td>
+                            <td><input type="text" name="credit" value="{{ entry['c'] }}"></td>
+                            <td><input type="text" name="marks" value="{{ entry['m'] }}"></td>
+                        </tr>
                         {% endfor %}
                     </table>
                     <p>Check and verify your credit and mark before submitting</p>
-                    <button class="try-btn" type="submit">Submit</button>
-                    {% endif %}
+                    {% for entry in data %}
+                        <input type="hidden" name="data" value="{{ entry['s'] }}|{{ entry['c'] }}|{{ entry['m'] }}">
+                    {% endfor %}
+                    <button class="try-btn" type="submit" name="calculate">Submit</button>
                 </form>
+                {% endif %}
+
                 {% if cgp is not none %}
                     <h2>Your CGPA is: {{ cgp }}</h2>
                 {% endif %}
             </div>
         </div>
         <footer>
-            <p>Copyright ©️ 
-            <a href="https://github.com/S4DIQ84">Mohammed Sadiq</a>
-        </p>
+            <p>&copy; 2024 CGPA Calculator. All rights reserved.</p>
         </footer>
     </div>
 </body>
