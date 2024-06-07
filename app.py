@@ -55,6 +55,7 @@ def auto():
 
     return render_template("automatic.html", error=error, data=data, cgp=cgp)
 
+
 @app.route("/manual", methods=['GET', 'POST'])
 def manual():
     data = []
@@ -62,22 +63,30 @@ def manual():
     error = None
 
     if request.method == "POST":
-        sub = request.form["s_code"]
-        credit = request.form["cred"]
-        mark = request.form["mark"]
-        new_entry = {"s": sub, "c": credit, "m": mark}
+        if 'add_entry' in request.form:
+            sub = request.form["sub"]
+            credit = request.form["cred"]
+            mark = request.form["mark"]
+            new_entry = {"s": sub, "c": credit, "m": mark}
 
-        for entry in request.form.getlist('data'):
-            s, c, m = entry.split('|')
-            data.append({"s": s, "c": c, "m": m})
-        
-        data.append(new_entry)
-        
-        try:
-            data_df = pd.DataFrame(data)
-            cgp = cgpa(data_df)
-        except Exception as e:
-            error = f"An error occurred while processing the data: {str(e)}"
+            for entry in request.form.getlist('data'):
+                s, c, m = entry.split('|')
+                data.append({"s": s, "c": c, "m": m})
+
+            data.append(new_entry)
+
+        if 'calculate' in request.form:
+            for i in range(len(request.form.getlist('sub'))):
+                s = request.form.getlist('sub')[i]
+                c = request.form.getlist('credit')[i]
+                m = request.form.getlist('marks')[i]
+                data.append({"s": s, "c": c, "m": m})
+
+            try:
+                data_df = pd.DataFrame(data)
+                cgp = cgpa(data_df)
+            except Exception as e:
+                error = f"An error occurred while processing the data: {str(e)}"
 
     return render_template("manual.html", data=data, cgp=cgp, error=error)
 
